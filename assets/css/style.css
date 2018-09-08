@@ -1,0 +1,14 @@
+body {
+    font-family: 'Lora', serif;
+}
+
+.jumbotron {
+    background-color: darkblue;
+    text-align: center;
+    color: white;
+}
+
+.btn {
+    background-color: darkblue;
+    border: darkblue;
+}
