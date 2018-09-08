@@ -79,8 +79,8 @@ $('#search').click(function(evt) {
                 snippet = '';
                 image = '';
 
-
-                if (response[j].multimedia[0].url)
+                
+                if (response[j].multimedia.length)
                     image = "<img class='article-image' src=" + baseImageUrl + response[j].multimedia[0].url + ">";
 
                 if (response[j].headline.main)
