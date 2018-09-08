@@ -65,21 +65,28 @@ $('#search').click(function(evt) {
                 byline = '',
                 url = '', 
                 snippet = '';
-            
+
+                console.log(result);
+
 
             for (var j = 0; j < parseInt($('#records').val()); j++) {
+                // reset all variables for each loop
+                headline = ''; 
+                byline = '';
+                url = '';
+                snippet = '';
 
                 if (response[j].headline.main)
                     headline = "<h2>" + response[j].headline.main + "</h2>";
 
-                if (response[j].byline.original)
+                if (response[j].byline)
                     byline = "<p>" + response[j].byline.original + "</p>"; 
 
                 if (response[j].web_url)
                     url = "<a href=" + response[j].web_url + " >Link to article</a>";
 
                 if (response[j].snippet)
-                    "<p>" + response[j].snippet + "</p>";
+                    snippet = "<p>" + response[j].snippet + "</p>";
 
                 $('#article').append(
                     headline + 
