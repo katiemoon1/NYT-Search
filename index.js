@@ -64,7 +64,9 @@ $('#search').click(function(evt) {
             var headline = '', 
                 byline = '',
                 url = '', 
-                snippet = '';
+                snippet = '',
+                image = '',
+                baseImageUrl = 'https://www.nytimes.com/'; // base url for NYT
 
                 console.log(result);
 
@@ -75,6 +77,11 @@ $('#search').click(function(evt) {
                 byline = '';
                 url = '';
                 snippet = '';
+                image = '';
+
+
+                if (response[j].multimedia[0].url)
+                    image = "<img class='article-image' src=" + baseImageUrl + response[j].multimedia[0].url + ">";
 
                 if (response[j].headline.main)
                     headline = "<h2>" + response[j].headline.main + "</h2>";
@@ -89,6 +96,7 @@ $('#search').click(function(evt) {
                     snippet = "<p>" + response[j].snippet + "</p>";
 
                 $('#article').append(
+                    image +
                     headline + 
                     byline +
                     url +
